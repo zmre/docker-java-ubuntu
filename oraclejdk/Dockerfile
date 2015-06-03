@@ -12,16 +12,13 @@ ENV LANG C.UTF-8
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
 
-# ...put your own build instructions here...
-#ENV DEBIAN_FRONTEND noninteractive
 WORKDIR /root
 
-
-# Add a repo where OpenJDK can be found.
+# Add a repo where Oracle Java can be found.
 RUN add-apt-repository -y ppa:webupd8team/java
 
 RUN apt-get update
-RUN apt-get install -y curl git supervisor
+#RUN apt-get install -y curl git supervisor
 RUN apt-get install -y software-properties-common
 RUN apt-get install -y ca-certificates-java
 
